@@ -2,7 +2,7 @@
 #include <iostream>
 
 Grades::Class::Class() {
-    professor = Professors::NoneSpecified;
+    professor = Grades::Professors::NoneSpecified;
     department = "";
     className = "";
     classDescription = "";
@@ -12,7 +12,7 @@ Grades::Class::Class() {
 
 Grades::Class::Class(std::string p, std::string d, std::string cn,
                      std::string cd, bool pr) {
-    professor = Professors::NoneSpecified;
+    professor = Grades::Professors::NoneSpecified;
     department = d;
     className = cn;
     classDescription = cd;
@@ -37,11 +37,11 @@ void Grades::Class::setPre(std::string pre) {
 
 std::string Grades::Class::ProfessorsToString(Grades::Professors p) {
     switch (p) {
-    case Professors::J:
+    case Grades::Professors::J:
         return "Professor J";
-    case Professors::NoneSpecified:
+    case Grades::Professors::NoneSpecified:
         return "No professor specified";
-    case Professors::T:
+    case Grades::Professors::T:
         return "Professor T";
     default:
         return "Invalid Professor choice";
@@ -50,11 +50,11 @@ std::string Grades::Class::ProfessorsToString(Grades::Professors p) {
 
 std::string Grades::Class::ChoicesToString(Grades::Choices c) {
     switch (c) {
-    case Choices::Online:
+    case Grades::Choices::Online:
         return "Online";
-    case Choices::Hybrid:
+    case Grades::Choices::Hybrid:
         return "Hybrid";
-    case Choices::InPerson:
+    case Grades::Choices::InPerson:
         return "In Person";
     default:
         return "No choice specified";
@@ -67,6 +67,10 @@ std::string Grades::Class::DepartmentsToString(Grades::Departments d) {
         return "Computer Science Department";
     case Grades::Departments::Economics:
         return "Economics Department";
+    case Grades::Departments::InformationSystems:
+        return "Information Systems Department";
+    case Grades::Departments::Cybersecurity:
+        return "Cybersecurity Department";
     default:
         return "No Department Specified";
     }

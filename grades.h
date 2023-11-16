@@ -10,13 +10,17 @@ enum class Choices {
 enum class Professors {
     NoneSpecified,
     J,
+    J2,
     T,
-    J2
+    T2,
 
 };
 enum class Departments {
     ComputerScience,
     Economics,
+    InformationSystems,
+    Cybersecurity
+
 };
 class Class {
     Grades::Professors professor;
