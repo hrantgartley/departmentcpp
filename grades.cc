@@ -2,7 +2,7 @@
 #include <iostream>
 
 Grades::Class::Class() {
-    professor = Grades::Professors::NoneSpecified;
+    professor = Professors::NoneSpecified;
     department = "";
     className = "";
     classDescription = "";
@@ -12,7 +12,7 @@ Grades::Class::Class() {
 
 Grades::Class::Class(std::string p, std::string d, std::string cn,
                      std::string cd, bool pr) {
-    professor = Grades::Professors::NoneSpecified;
+    professor = Professors::NoneSpecified;
     department = d;
     className = cn;
     classDescription = cd;
@@ -35,42 +35,44 @@ void Grades::Class::setPre(std::string pre) {
     this->preR = pre;
 }
 
-std::string Grades::Class::ProfessorsToString(Grades::Professors p) {
+std::string Grades::Class::ProfessorsToString(Professors p) {
     switch (p) {
-    case Grades::Professors::J:
+    case Professors::J:
         return "Professor J";
-    case Grades::Professors::NoneSpecified:
+    case Professors::NoneSpecified:
         return "No professor specified";
-    case Grades::Professors::T:
+    case Professors::T:
         return "Professor T";
     default:
         return "Invalid Professor choice";
     }
 }
 
-std::string Grades::Class::ChoicesToString(Grades::Choices c) {
+std::string Grades::Class::ChoicesToString(Choices c) {
     switch (c) {
-    case Grades::Choices::Online:
+    case Choices::Online:
         return "Online";
-    case Grades::Choices::Hybrid:
+    case Choices::Hybrid:
         return "Hybrid";
-    case Grades::Choices::InPerson:
+    case Choices::InPerson:
         return "In Person";
     default:
         return "No choice specified";
     }
 }
 
-std::string Grades::Class::DepartmentsToString(Grades::Departments d) {
+std::string Grades::Class::DepartmentsToString(Departments d) {
     switch (d) {
-    case Grades::Departments::ComputerScience:
+    case Departments::ComputerScience:
         return "Computer Science Department";
-    case Grades::Departments::Economics:
+    case Departments::Economics:
         return "Economics Department";
-    case Grades::Departments::InformationSystems:
+    case Departments::InformationSystems:
         return "Information Systems Department";
-    case Grades::Departments::Cybersecurity:
+    case Departments::Cybersecurity:
         return "Cybersecurity Department";
+    case Departments::Mathematics:
+        return "Math Department";
     default:
         return "No Department Specified";
     }
