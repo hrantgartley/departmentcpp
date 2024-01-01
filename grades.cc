@@ -1,7 +1,8 @@
 #include "grades.h"
 #include <iostream>
+using namespace Grades;
 
-Grades::Class::Class() {
+Class::Class() {
     professor = Professors::NoneSpecified;
     department = "";
     className = "";
@@ -10,8 +11,8 @@ Grades::Class::Class() {
     hasPrereq = false;
 }
 
-Grades::Class::Class(std::string p, std::string d, std::string cn,
-                     std::string cd, bool pr) {
+Class::Class(std::string p, std::string d, std::string cn, std::string cd,
+             bool pr) {
     professor = Professors::NoneSpecified;
     department = d;
     className = cn;
@@ -19,7 +20,7 @@ Grades::Class::Class(std::string p, std::string d, std::string cn,
     hasPrereq = pr;
 }
 
-void Grades::Class::PrintInfo() const {
+void Class::PrintInfo() const {
     std::cout << "Department: " << this->department << std::endl;
     std::cout << "Class Name: " << this->className << std::endl;
     std::cout << "Class Description: " << this->classDescription << std::endl;
@@ -31,11 +32,11 @@ void Grades::Class::PrintInfo() const {
         std::cout << "This class does not have a prerequisite" << std::endl;
 }
 
-void Grades::Class::setPre(std::string pre) {
+void Class::setPre(std::string pre) {
     this->preR = pre;
 }
 
-std::string Grades::Class::ProfessorsToString(Professors p) {
+std::string Class::ProfessorsToString(Professors p) {
     switch (p) {
     case Professors::J:
         return "Professor J";
@@ -48,7 +49,7 @@ std::string Grades::Class::ProfessorsToString(Professors p) {
     }
 }
 
-std::string Grades::Class::ChoicesToString(Choices c) {
+std::string Class::ChoicesToString(Choices c) {
     switch (c) {
     case Choices::Online:
         return "Online";
@@ -61,7 +62,7 @@ std::string Grades::Class::ChoicesToString(Choices c) {
     }
 }
 
-std::string Grades::Class::DepartmentsToString(Departments d) {
+std::string Class::DepartmentsToString(Departments d) {
     switch (d) {
     case Departments::ComputerScience:
         return "Computer Science Department";
