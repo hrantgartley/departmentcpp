@@ -24,6 +24,15 @@ class Class {
         Cybersecurity,
         Mathematics
     };
+    enum class SchoolList {
+        UniversityOfNorthAlabama,
+        UniversityOfAlabamaHuntsville,
+        UniversityOfAlabama,
+        UniversityOfAlabamaBirmingham,
+        Princeton
+
+    };
+
     Professors professor;
     std::string department;
     std::string className;
