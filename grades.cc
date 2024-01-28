@@ -31,6 +31,7 @@ void Class::PrintInfo() const {
     } else
         std::cout << "This class does not have a prerequisite" << std::endl;
 }
+// Getters and Setters
 
 void Class::setPre(std::string pre) {
     this->preR = pre;
