@@ -1,6 +1,7 @@
 #include "grades.h"
+using namespace Grades;
 int main() {
-    Grades::Class c;
+    Class c;
     c.PrintInfo();
     return 0;
 }

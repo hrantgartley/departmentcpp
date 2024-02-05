@@ -3,12 +3,7 @@
 namespace Grades {
 
 class Class {
-    enum class Choices {
-        Online,
-        Hybrid,
-        InPerson
-
-    };
+    enum class Choices { Online, Hybrid, InPerson NoneSpecified };
     enum class Professors {
         NoneSpecified,
         J,
@@ -50,5 +45,6 @@ class Class {
     std::string ProfessorsToString(Class::Professors p);
     std::string ChoicesToString(Class::Choices c);
     std::string DepartmentsToString(Class::Departments d);
+    void checkStatus();
 };
 } // namespace Grades

@@ -79,3 +79,38 @@ std::string Class::DepartmentsToString(Departments d) {
         return "No Department Specified";
     }
 }
+
+// tons of boiler plate code but i dont know another way to do this
+void Class::checkStatus() {
+    if (professor == Professors::NoneSpecified)
+        std::cout << "This class does not have a professor assigned yet"
+                  << std::endl;
+    else
+        std::cout << "This class has a professor assigned" << std::endl;
+    if (department == "")
+        std::cout << "This class does not have a department assigned yet"
+                  << std::endl;
+    else
+        std::cout << "This class has a department assigned" << std::endl;
+
+    if (className == "")
+        std::cout << "This class does not have a name assigned yet"
+                  << std::endl;
+    else
+        std::cout << "This class has a name assigned" << std::endl;
+    if (classDescription == "")
+        std::cout << "This class does not have a description assigned yet"
+                  << std::endl;
+    else
+        std::cout << "This class has a description assigned" << std::endl;
+
+    if (availableChoices == Choices::NoneSpecified)
+        std::cout << "This class does not have a choice assigned yet"
+                  << std::endl;
+    else
+        std::cout << "This class has a choice assigned" << std::endl;
+    if (hasPrereq)
+        std::cout << "This class has a prerequisite" << std::endl;
+    else
+        std::cout << "This class does not have a prerequisite" << std::endl;
+}
