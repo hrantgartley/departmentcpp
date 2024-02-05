@@ -80,37 +80,23 @@ std::string Class::DepartmentsToString(Departments d) {
     }
 }
 
-// tons of boiler plate code but i dont know another way to do this
+void checkAttribute(const std::string& atttributeName,
+                    const std::string& attributeValue) {
+    if (attributeValue.empty()) {
+        std::cerr << "Attribute " << atttributeName << " is empty" << std::endl;
+    }
+}
+
 void Class::checkStatus() {
-    if (professor == Professors::NoneSpecified)
-        std::cout << "This class does not have a professor assigned yet"
-                  << std::endl;
-    else
-        std::cout << "This class has a professor assigned" << std::endl;
-    if (department == "")
-        std::cout << "This class does not have a department assigned yet"
-                  << std::endl;
-    else
-        std::cout << "This class has a department assigned" << std::endl;
-
-    if (className == "")
-        std::cout << "This class does not have a name assigned yet"
-                  << std::endl;
-    else
-        std::cout << "This class has a name assigned" << std::endl;
-    if (classDescription == "")
-        std::cout << "This class does not have a description assigned yet"
-                  << std::endl;
-    else
-        std::cout << "This class has a description assigned" << std::endl;
-
-    if (availableChoices == Choices::NoneSpecified)
-        std::cout << "This class does not have a choice assigned yet"
-                  << std::endl;
-    else
-        std::cout << "This class has a choice assigned" << std::endl;
-    if (hasPrereq)
-        std::cout << "This class has a prerequisite" << std::endl;
-    else
-        std::cout << "This class does not have a prerequisite" << std::endl;
+    checkAttribute("professor",
+                   professor == Professors::NoneSpecified ? "" : "a professor");
+    checkAttribute("department", department);
+    checkAttribute("class name", className);
+    checkAttribute("class description", classDescription);
+    checkAttribute("available choices",
+                   availableChoices == Choices::NoneSpecified ? ""
+                                                              : "a choice");
+    std::cout << (hasPrereq ? "This class has a prerequisite"
+                            : "This class does not have a prerequisite")
+              << std::endl;
 }
