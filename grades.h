@@ -47,5 +47,6 @@ class Class {
     std::string DepartmentsToString(Class::Departments d);
     void checkStatus();
     void checkStatus(std::string&, std::string&);
+    std::string parseBasedOnCheck();
 };
 } // namespace Grades
