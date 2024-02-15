@@ -10,22 +10,22 @@ class Class {
         J2,
         T,
         T2,
-
     };
     enum class Departments {
         ComputerScience,
         Economics,
         InformationSystems,
         Cybersecurity,
-        Mathematics
+        Mathematics,
+        NoneSpecified
     };
     enum class SchoolList {
         UniversityOfNorthAlabama,
         UniversityOfAlabamaHuntsville,
         UniversityOfAlabama,
         UniversityOfAlabamaBirmingham,
-        Princeton
-
+        Princeton,
+        NoneSpecified
     };
 
     Professors professor;
