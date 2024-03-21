@@ -23,6 +23,18 @@ void Buildings::PrintBuilding() const {
     std::cout << std::endl;
 }
 
+int Buildings::getFloors() const {
+    return this->floors;
+}
+
+double Buildings::getArea() const {
+    for (int i = 0; i < floors; i++) {
+        for (int j = 0; j < windows; j++) {
+            dimensions[i][j] = 10;
+        }
+    }
+}
+
 int main() {
     Buildings building1("Building 1", 5, 10);
     Buildings building2("Building 2", 10, 20);
